@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ayoubbale/simple-java-app'
+        DOCKER_IMAGE = 'mohamed/documents/simple-java-project'
         DOCKER_CREDENTIALS_ID = 'b99862ec-f40f-4f0e-9065-e5bb68263348'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Bo-Ayoub/simple-java-maven-project.git'
+                git 'https://github.com/MohamedBelh/projet-java-jenkins-.git'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'mvn clean install'
+                    sh 'mvn clean install
                 }
             }
         }
